@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE809BC91F26E30E00AD4145 /* CalenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE809BC81F26E30E00AD4145 /* CalenderCell.xib */; };
+		FE809BCB1F26E35F00AD4145 /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE809BCA1F26E35F00AD4145 /* DateCell.xib */; };
+		FE809BCD1F26E92200AD4145 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE809BCC1F26E92200AD4145 /* CalendarCell.swift */; };
+		FE809BCF1F26EA7600AD4145 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE809BCE1F26EA7600AD4145 /* DateCell.swift */; };
+		FE8153001F32D00300296049 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8152FF1F32D00300296049 /* TestViewController.swift */; };
+		FE9903721F2F15320053C24C /* CalenderAnimationCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */; };
+		FECD8F191F25C57C00D54632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F181F25C57C00D54632 /* AppDelegate.swift */; };
+		FECD8F1B1F25C57C00D54632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F1A1F25C57C00D54632 /* ViewController.swift */; };
+		FECD8F1E1F25C57C00D54632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECD8F1C1F25C57C00D54632 /* Main.storyboard */; };
+		FECD8F201F25C57D00D54632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FECD8F1F1F25C57D00D54632 /* Assets.xcassets */; };
+		FECD8F231F25C57D00D54632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECD8F211F25C57D00D54632 /* LaunchScreen.storyboard */; };
+		FECD8F2E1F25C57D00D54632 /* PDCalenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F2D1F25C57D00D54632 /* PDCalenderTests.swift */; };
+		FECD8F391F25C57D00D54632 /* PDCalenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F381F25C57D00D54632 /* PDCalenderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FECD8F2A1F25C57D00D54632 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FECD8F0D1F25C57C00D54632 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FECD8F141F25C57C00D54632;
+			remoteInfo = PDCalender;
+		};
+		FECD8F351F25C57D00D54632 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FECD8F0D1F25C57C00D54632 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FECD8F141F25C57C00D54632;
+			remoteInfo = PDCalender;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE809BC81F26E30E00AD4145 /* CalenderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderCell.xib; sourceTree = "<group>"; };
+		FE809BCA1F26E35F00AD4145 /* DateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
+		FE809BCC1F26E92200AD4145 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		FE809BCE1F26EA7600AD4145 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		FE8152FF1F32D00300296049 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderAnimationCotroller.swift; sourceTree = "<group>"; };
+		FECD8F151F25C57C00D54632 /* PDCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FECD8F181F25C57C00D54632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FECD8F1A1F25C57C00D54632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FECD8F1D1F25C57C00D54632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FECD8F1F1F25C57D00D54632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FECD8F221F25C57D00D54632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FECD8F241F25C57D00D54632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FECD8F291F25C57D00D54632 /* PDCalenderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDCalenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FECD8F2D1F25C57D00D54632 /* PDCalenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDCalenderTests.swift; sourceTree = "<group>"; };
+		FECD8F2F1F25C57D00D54632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FECD8F341F25C57D00D54632 /* PDCalenderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDCalenderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FECD8F381F25C57D00D54632 /* PDCalenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDCalenderUITests.swift; sourceTree = "<group>"; };
+		FECD8F3A1F25C57D00D54632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FECD8F121F25C57C00D54632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F261F25C57D00D54632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F311F25C57D00D54632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FECD8F0C1F25C57C00D54632 = {
+			isa = PBXGroup;
+			children = (
+				FECD8F171F25C57C00D54632 /* PDCalender */,
+				FECD8F2C1F25C57D00D54632 /* PDCalenderTests */,
+				FECD8F371F25C57D00D54632 /* PDCalenderUITests */,
+				FECD8F161F25C57C00D54632 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FECD8F161F25C57C00D54632 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F151F25C57C00D54632 /* PDCalender.app */,
+				FECD8F291F25C57D00D54632 /* PDCalenderTests.xctest */,
+				FECD8F341F25C57D00D54632 /* PDCalenderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FECD8F171F25C57C00D54632 /* PDCalender */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F181F25C57C00D54632 /* AppDelegate.swift */,
+				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
+				FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */,
+				FE8152FF1F32D00300296049 /* TestViewController.swift */,
+				FE809BCC1F26E92200AD4145 /* CalendarCell.swift */,
+				FE809BCE1F26EA7600AD4145 /* DateCell.swift */,
+				FE809BC81F26E30E00AD4145 /* CalenderCell.xib */,
+				FE809BCA1F26E35F00AD4145 /* DateCell.xib */,
+				FECD8F1C1F25C57C00D54632 /* Main.storyboard */,
+				FECD8F1F1F25C57D00D54632 /* Assets.xcassets */,
+				FECD8F211F25C57D00D54632 /* LaunchScreen.storyboard */,
+				FECD8F241F25C57D00D54632 /* Info.plist */,
+			);
+			path = PDCalender;
+			sourceTree = "<group>";
+		};
+		FECD8F2C1F25C57D00D54632 /* PDCalenderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F2D1F25C57D00D54632 /* PDCalenderTests.swift */,
+				FECD8F2F1F25C57D00D54632 /* Info.plist */,
+			);
+			path = PDCalenderTests;
+			sourceTree = "<group>";
+		};
+		FECD8F371F25C57D00D54632 /* PDCalenderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F381F25C57D00D54632 /* PDCalenderUITests.swift */,
+				FECD8F3A1F25C57D00D54632 /* Info.plist */,
+			);
+			path = PDCalenderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FECD8F141F25C57C00D54632 /* PDCalender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FECD8F3D1F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalender" */;
+			buildPhases = (
+				FECD8F111F25C57C00D54632 /* Sources */,
+				FECD8F121F25C57C00D54632 /* Frameworks */,
+				FECD8F131F25C57C00D54632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PDCalender;
+			productName = PDCalender;
+			productReference = FECD8F151F25C57C00D54632 /* PDCalender.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FECD8F281F25C57D00D54632 /* PDCalenderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FECD8F401F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalenderTests" */;
+			buildPhases = (
+				FECD8F251F25C57D00D54632 /* Sources */,
+				FECD8F261F25C57D00D54632 /* Frameworks */,
+				FECD8F271F25C57D00D54632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FECD8F2B1F25C57D00D54632 /* PBXTargetDependency */,
+			);
+			name = PDCalenderTests;
+			productName = PDCalenderTests;
+			productReference = FECD8F291F25C57D00D54632 /* PDCalenderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FECD8F331F25C57D00D54632 /* PDCalenderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FECD8F431F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalenderUITests" */;
+			buildPhases = (
+				FECD8F301F25C57D00D54632 /* Sources */,
+				FECD8F311F25C57D00D54632 /* Frameworks */,
+				FECD8F321F25C57D00D54632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FECD8F361F25C57D00D54632 /* PBXTargetDependency */,
+			);
+			name = PDCalenderUITests;
+			productName = PDCalenderUITests;
+			productReference = FECD8F341F25C57D00D54632 /* PDCalenderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FECD8F0D1F25C57C00D54632 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "张晓鑫";
+				TargetAttributes = {
+					FECD8F141F25C57C00D54632 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 82574LX55P;
+						ProvisioningStyle = Automatic;
+					};
+					FECD8F281F25C57D00D54632 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 82574LX55P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FECD8F141F25C57C00D54632;
+					};
+					FECD8F331F25C57D00D54632 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 82574LX55P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FECD8F141F25C57C00D54632;
+					};
+				};
+			};
+			buildConfigurationList = FECD8F101F25C57C00D54632 /* Build configuration list for PBXProject "PDCalender" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FECD8F0C1F25C57C00D54632;
+			productRefGroup = FECD8F161F25C57C00D54632 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FECD8F141F25C57C00D54632 /* PDCalender */,
+				FECD8F281F25C57D00D54632 /* PDCalenderTests */,
+				FECD8F331F25C57D00D54632 /* PDCalenderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FECD8F131F25C57C00D54632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FECD8F231F25C57D00D54632 /* LaunchScreen.storyboard in Resources */,
+				FE809BC91F26E30E00AD4145 /* CalenderCell.xib in Resources */,
+				FECD8F201F25C57D00D54632 /* Assets.xcassets in Resources */,
+				FECD8F1E1F25C57C00D54632 /* Main.storyboard in Resources */,
+				FE809BCB1F26E35F00AD4145 /* DateCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F271F25C57D00D54632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F321F25C57D00D54632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FECD8F111F25C57C00D54632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FECD8F1B1F25C57C00D54632 /* ViewController.swift in Sources */,
+				FE809BCD1F26E92200AD4145 /* CalendarCell.swift in Sources */,
+				FE9903721F2F15320053C24C /* CalenderAnimationCotroller.swift in Sources */,
+				FECD8F191F25C57C00D54632 /* AppDelegate.swift in Sources */,
+				FE8153001F32D00300296049 /* TestViewController.swift in Sources */,
+				FE809BCF1F26EA7600AD4145 /* DateCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F251F25C57D00D54632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FECD8F2E1F25C57D00D54632 /* PDCalenderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECD8F301F25C57D00D54632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FECD8F391F25C57D00D54632 /* PDCalenderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FECD8F2B1F25C57D00D54632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FECD8F141F25C57C00D54632 /* PDCalender */;
+			targetProxy = FECD8F2A1F25C57D00D54632 /* PBXContainerItemProxy */;
+		};
+		FECD8F361F25C57D00D54632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FECD8F141F25C57C00D54632 /* PDCalender */;
+			targetProxy = FECD8F351F25C57D00D54632 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FECD8F1C1F25C57C00D54632 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FECD8F1D1F25C57C00D54632 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FECD8F211F25C57D00D54632 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FECD8F221F25C57D00D54632 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FECD8F3B1F25C57D00D54632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FECD8F3C1F25C57D00D54632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FECD8F3E1F25C57D00D54632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FECD8F3F1F25C57D00D54632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FECD8F411F25C57D00D54632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalenderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PDCalender.app/PDCalender";
+			};
+			name = Debug;
+		};
+		FECD8F421F25C57D00D54632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalenderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PDCalender.app/PDCalender";
+			};
+			name = Release;
+		};
+		FECD8F441F25C57D00D54632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalenderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalenderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PDCalender;
+			};
+			name = Debug;
+		};
+		FECD8F451F25C57D00D54632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 82574LX55P;
+				INFOPLIST_FILE = PDCalenderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandax.PDCalenderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PDCalender;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FECD8F101F25C57C00D54632 /* Build configuration list for PBXProject "PDCalender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FECD8F3B1F25C57D00D54632 /* Debug */,
+				FECD8F3C1F25C57D00D54632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FECD8F3D1F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FECD8F3E1F25C57D00D54632 /* Debug */,
+				FECD8F3F1F25C57D00D54632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FECD8F401F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalenderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FECD8F411F25C57D00D54632 /* Debug */,
+				FECD8F421F25C57D00D54632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FECD8F431F25C57D00D54632 /* Build configuration list for PBXNativeTarget "PDCalenderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FECD8F441F25C57D00D54632 /* Debug */,
+				FECD8F451F25C57D00D54632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FECD8F0D1F25C57C00D54632 /* Project object */;
+}
