@@ -9,5 +9,6 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    let weekArray: Array = ["日","一","二","三","四","五","六"]
     
 }

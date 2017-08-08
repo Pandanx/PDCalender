@@ -111,8 +111,8 @@
 			children = (
 				FECD8F181F25C57C00D54632 /* AppDelegate.swift */,
 				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
-				FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */,
 				FE8152FF1F32D00300296049 /* TestViewController.swift */,
+				FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */,
 				FE809BCC1F26E92200AD4145 /* CalendarCell.swift */,
 				FE809BCE1F26EA7600AD4145 /* DateCell.swift */,
 				FE809BC81F26E30E00AD4145 /* CalenderCell.xib */,
