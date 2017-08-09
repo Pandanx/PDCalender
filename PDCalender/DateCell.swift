@@ -10,9 +10,12 @@ import UIKit
 
 class DateCell: UICollectionViewCell {
     var dateLabel: UILabel = UILabel()
+    
     var dateString: String? {
         didSet{
             self.dateLabel.text = dateString
+            self.dateLabel.textColor = UIColor.lightGray
+            self.dateLabel.font = UIFont.systemFont(ofSize: 12)
             self.dateLabel.sizeToFit()
             dateLabel.center.x = self.bounds.width / 2.0
             dateLabel.center.y = self.bounds.height / 2.0

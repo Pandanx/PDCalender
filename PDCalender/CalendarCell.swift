@@ -13,6 +13,7 @@ class CalendarCell: UICollectionViewCell {
     var dateString: String? {
         didSet{
             calendarLabel.text = dateString
+            calendarLabel.font = UIFont.systemFont(ofSize: 17)
             calendarLabel.sizeToFit()
             calendarLabel.center.x = self.bounds.width / 2.0
             calendarLabel.center.y = self.bounds.height / 2.0
@@ -20,10 +21,11 @@ class CalendarCell: UICollectionViewCell {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.addSubview(calendarLabel)
+        self.layer.cornerRadius = self.frame.width / 2.0
+        self.layer.masksToBounds = true
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
