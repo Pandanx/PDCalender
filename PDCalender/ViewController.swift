@@ -259,13 +259,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         collectionView = UICollectionView.init(frame:  CGRect(x: kScreenWidth, y: 0, width: kScreenWidth, height:500), collectionViewLayout: layout)
         nextCollectionView = UICollectionView.init(frame: CGRect(x: kScreenWidth*2, y: 0, width: kScreenWidth, height:500), collectionViewLayout: layoutNext)
         
-        let upSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer.init(target: self, action: #selector(upSwipeAction(_:)))
-        upSwipe.direction = .down
-        collectionView.addGestureRecognizer(upSwipe)
-        
         let downSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer.init(target: self, action: #selector(downSwipeAction(_:)))
-        upSwipe.direction = .up
+        downSwipe.direction = .down
         collectionView.addGestureRecognizer(downSwipe)
+        
+        let upSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer.init(target: self, action: #selector(upSwipeAction(_:)))
+        upSwipe.direction = .up
+        collectionView.addGestureRecognizer(upSwipe)
         
         
         collectionView.dataSource = self
