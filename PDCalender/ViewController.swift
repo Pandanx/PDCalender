@@ -20,10 +20,19 @@ let kVerticalPading: CGFloat = 100.0
 
 class ViewController: UIViewController {
     
+    let calendarManager:CalandarManager = CalandarManager()
     var calenderCellColor: UIColor?
     var selectedCellColor: UIColor?
     var tadayCellColor: UIColor?
-    var weekMode: Bool = false
+    var weekMode: Bool = false {
+        didSet {
+            let barItemTitle: String = weekMode ? String(format:"%li年%.2ld月第%ld周", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.weekOfMonth(date: date)) : String(format:"%li-%.2ld-%.2ld", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.day(date: self.date))
+            self.navigationItem.leftBarButtonItem?.title = barItemTitle
+            collectionView.reloadData()
+            nextCollectionView.reloadData()
+            lastCollectionView.reloadData()
+        }
+    }
 
     var lastMonthButton: UIButton!
     var nextMonthButton: UIButton!
@@ -39,7 +48,15 @@ class ViewController: UIViewController {
     
     var dateArray: Array<String> = ["日","一","二","三","四","五","六"]
     var currentDay: Int = 0
-    var date: Date = Date()
+    var date: Date = Date() {
+        didSet {
+            let barItemTitle: String = weekMode ? String(format:"%li年%.2ld月第%ld周", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.weekOfMonth(date: date)) : String(format:"%li-%.2ld-%.2ld", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.day(date: self.date))
+            self.navigationItem.leftBarButtonItem?.title = barItemTitle
+            collectionView.reloadData()
+            lastCollectionView.reloadData()
+            nextCollectionView.reloadData()
+        }
+    }
     var monthCount: Int = 0
     var upViewY: CGFloat?
     let calenderIdentifier = "CalendarCell"
@@ -57,7 +74,7 @@ class ViewController: UIViewController {
         nextCollectionView.register(DateCell.classForCoder(), forCellWithReuseIdentifier: dateIdentifier)
         lastCollectionView.register(CalendarCell.classForCoder(), forCellWithReuseIdentifier: calenderIdentifier)
         lastCollectionView.register(DateCell.classForCoder(), forCellWithReuseIdentifier: dateIdentifier)
-        currentDay = self.day(date: date)
+        currentDay = calendarManager.day(date: date)
         prepareNavigationBar()
         
     }
@@ -75,7 +92,8 @@ class ViewController: UIViewController {
         collectionView.reloadData()
     }
     func prepareNavigationBar() {
-        let item = UIBarButtonItem(title: String(format:"%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date)), style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        let barItemTitle: String = weekMode ? String(format:"%li年%.2ld月第%ld周", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.weekOfMonth(date: date)) : String(format:"%li-%.2ld-%.2ld", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.day(date: self.date))
+        let item = UIBarButtonItem(title: barItemTitle, style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftItemBarAction(_:)))
         item.tintColor = UIColor.orange
         self.navigationItem.leftBarButtonItem=item
     }
@@ -83,151 +101,61 @@ class ViewController: UIViewController {
         prepareScrollView()
     }
     
-   
-    
-    func day(date: Date) -> Int {
-        let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: date)
-        return components.day!
-    }
-    
-    func weekday(date: Date) -> Int {
-        let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.weekday, Calendar.Component.day], from: date)
-        return components.weekday! - 1
-    }
-    
-    func weekOfMonth(date: Date) -> Int {
-        let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.weekOfMonth, Calendar.Component.day], from: date)
-        return components.weekOfMonth!
-    }
-    
-    func month(date: Date) -> Int {
-        let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: date)
-        return components.month!
-    }
-    
-    func year(date: Date) -> Int {
-        let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: date)
-        return components.year!
-    }
-    //算出每月一号对应星期几
-    func firstWeekdayInThisMoth(date: Date) -> Int {
-        var calendar = Calendar.current
-        calendar.firstWeekday = 1
-        var component =  calendar.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: date)
-        component.day = 1
-        let firstDayOfMonthDate = calendar.date(from: component)
-        let firstWeekDay = calendar.ordinality(of: .weekday, in: .weekOfMonth, for: firstDayOfMonthDate!)
-        return firstWeekDay! - 1
-        
-    }
-    //当前月份天数
-    func totaldaysInThisMonth(date: Date) -> Int {
-        let totaldaysInMonth: Range = Calendar.current.range(of: .day, in: .month, for: date)!
-//        print("\(totaldaysInMonth)")
-        return totaldaysInMonth.upperBound - 1
-    }
-    
-    //上一个月
-    func lastMonth(date: Date) -> Date {
-        var dateComponents = DateComponents()
-        dateComponents.month = -1
-        monthCount -= 1
-        let newDate = Calendar.current.date(byAdding: dateComponents, to: date)
-        return newDate!
-    }
-    //下个月
-    func nextMonth(date: Date) -> Date {
-        var dateComponents = DateComponents()
-        dateComponents.month = 1
-        monthCount += 1
-        let newDate = Calendar.current.date(byAdding: dateComponents, to: date)
-        return newDate!
-    }
-    
-    //上一周
-    func lastWeek(date: Date) -> Date {
-        var dateComponents = DateComponents()
-        dateComponents.day = -7
-        let newDate = Calendar.current.date(byAdding: dateComponents, to: date)
-        return newDate!
-    }
-    
-    //下一周
-    func nextWeek(date: Date) -> Date {
-        var dateComponents = DateComponents()
-        dateComponents.day = 7
-        let newDate = Calendar.current.date(byAdding: dateComponents, to: date)
-        print(day(date: newDate!))
-        return newDate!
-        
-    }
-    
     func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
         UIView.transition(with: self.collectionView, duration: 0.5, options: .curveEaseInOut, animations: {
-            self.date = self.lastMonth(date: self.date)
-            self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
+            self.date = self.calendarManager.lastMonth(date: self.date)
+            self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld", self.calendarManager.year(date: self.date), self.calendarManager.month(date: self.date), self.calendarManager.day(date: self.date))
             
         }, completion: nil)
-        self.collectionView.reloadData()
         
     }
     func leftSwipeAction(_ sender: UISwipeGestureRecognizer) {
         UIView.transition(with: collectionView, duration: 0.5, options: .curveEaseInOut, animations: {
-            self.date = self.nextMonth(date: self.date)
-            self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
+            self.date = self.calendarManager.nextMonth(date: self.date)
+            self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld", self.calendarManager.year(date: self.date), self.calendarManager.month(date: self.date), self.calendarManager.day(date: self.date))
             
         }, completion: nil)
-        self.collectionView.reloadData()
     }
     
     func upSwipeAction(_ sender: UISwipeGestureRecognizer) {
         if !weekMode {
             weekMode = true
-            collectionView.reloadData()
-            nextCollectionView.reloadData()
-            lastCollectionView.reloadData()
         }
     }
     
     func downSwipeAction(_ sender: UISwipeGestureRecognizer) {
         if weekMode {
             weekMode = false
-            collectionView.reloadData()
-            nextCollectionView.reloadData()
-            lastCollectionView.reloadData()
         }
     }
     
+    func leftItemBarAction(_ sender: UINavigationItem) {
+        print(sender)
+        _ = PDDatePickerPopView.showDatePicker( self.date, datePickerCallBack: { (pickerDate) in
+            print("call Back")
+            self.date = pickerDate!
+        })
+    }
+    
     func nextMonthAction() {
-        self.date = self.nextMonth(date: self.date)
-        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
-        self.collectionView.reloadData()
-        self.lastCollectionView.reloadData()
-        self.nextCollectionView.reloadData()
+        self.date = calendarManager.nextMonth(date: self.date)
+        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.day(date: self.date))
     }
     
     func lastMonthAction() {
-        self.date = self.lastMonth(date: self.date)
-        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
-        self.collectionView.reloadData()
-        self.lastCollectionView.reloadData()
-        self.nextCollectionView.reloadData()
+        self.date = calendarManager.lastMonth(date: self.date)
+        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.day(date: self.date))
+        
     }
     
     func nextWeekAction() {
-        self.date = self.nextWeek(date: self.date)
-        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
-        self.collectionView.reloadData()
-        self.lastCollectionView.reloadData()
-        self.nextCollectionView.reloadData()
+        self.date = calendarManager.nextWeek(date: self.date)
+        self.navigationItem.leftBarButtonItem?.title = String(format: "%li年%.2ld月第%ld周", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.weekOfMonth(date: date))
     }
     
     func lastWeekAction() {
-        self.date = self.lastWeek(date: self.date)
-        self.navigationItem.leftBarButtonItem?.title = String(format: "%li-%.2ld-%.2ld",self.year(date: self.date),self.month(date: self.date),self.day(date: self.date))
-        self.collectionView.reloadData()
-        self.lastCollectionView.reloadData()
-        self.nextCollectionView.reloadData()
+        self.date = calendarManager.lastWeek(date: self.date)
+        self.navigationItem.leftBarButtonItem?.title = String(format: "%li年%.2ld月%ld周", calendarManager.year(date: self.date), calendarManager.month(date: self.date), calendarManager.weekOfMonth(date: date))
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -293,24 +221,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return 7
         } else {
             
-            let lastDate = lastMonth(date: date)
-            let nextDate = nextMonth(date: date)
+            let lastDate = calendarManager.lastMonth(date: date)
+            let nextDate = calendarManager.nextMonth(date: date)
             var day: Int = 0
             if weekMode {
                 return 7
             } else {
                 if collectionView == lastCollectionView {
                     
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: lastDate)
-                    let fisrtWeekDay = self.firstWeekdayInThisMoth(date: lastDate)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: lastDate)
+                    let fisrtWeekDay = calendarManager.firstWeekdayInThisMoth(date: lastDate)
                     day = daysInThisMonth + fisrtWeekDay
                 } else if collectionView == self.collectionView {
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: date)
-                    let fisrtWeekDay = self.firstWeekdayInThisMoth(date: date)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: date)
+                    let fisrtWeekDay = calendarManager.firstWeekdayInThisMoth(date: date)
                     day = daysInThisMonth + fisrtWeekDay
                 } else if collectionView == nextCollectionView {
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: nextDate)
-                    let fisrtWeekDay = self.firstWeekdayInThisMoth(date: nextDate)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: nextDate)
+                    let fisrtWeekDay = calendarManager.firstWeekdayInThisMoth(date: nextDate)
                     day = daysInThisMonth + fisrtWeekDay
                 }
                 return day
@@ -319,10 +247,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let lastDate = lastMonth(date: date)
-        let nextDate = nextMonth(date: date)
-        let lastWeekDate = lastWeek(date: date)
-        let nextWeekDate = nextWeek(date: date)
+        let lastDate = calendarManager.lastMonth(date: date)
+        let nextDate = calendarManager.nextMonth(date: date)
+        let lastWeekDate = calendarManager.lastWeek(date: date)
+        let nextWeekDate = calendarManager.nextWeek(date: date)
 
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dateIdentifier, for: indexPath) as! DateCell
@@ -334,25 +262,25 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calenderIdentifier, for: indexPath) as! CalendarCell
                 if weekMode {
     
-                    let weekday = self.weekday(date: date)
-                    let flag = self.day(date: date) - weekday
+                    let weekday = calendarManager.weekday(date: date)
+                    let flag = calendarManager.day(date: date) - weekday
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white
                     if i == weekday {
-                        if weekOfMonth(date: date) == weekOfMonth(date: Date()) {
+                        if calendarManager.weekOfMonth(date: date) == calendarManager.weekOfMonth(date: Date()) {
                             cell.backgroundColor = UIColor.red
                         }
                     }
                     day = flag + i
                     
-                    if day > 0 && day < self.totaldaysInThisMonth(date: date) {
+                    if day > 0 && day < calendarManager.totaldaysInThisMonth(date: date) {
                         cell.dateString = String(day)
                     }
                 } else {
                     
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: date)
-                    let firstWeekday = self.firstWeekdayInThisMoth(date: date)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: date)
+                    let firstWeekday = calendarManager.firstWeekdayInThisMoth(date: date)
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white
@@ -361,9 +289,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     } else if i > firstWeekday + daysInThisMonth - 1 {
                         //                    cell.backgroundColor = UIColor.red
                     } else {
-                        print("CurrentDay = \(currentDay), FirstWeekDay = \(self.firstWeekdayInThisMoth(date: date))")
-                        if i == currentDay + self.firstWeekdayInThisMoth(date: date) - 1 {
-                            if month(date: date) == month(date: Date()) {
+                        print("CurrentDay = \(currentDay), FirstWeekDay = \(calendarManager.firstWeekdayInThisMoth(date: date))")
+                        if i == currentDay + calendarManager.firstWeekdayInThisMoth(date: date) - 1 {
+                            if calendarManager.month(date: date) == calendarManager.month(date: Date()) {
                                 cell.backgroundColor = UIColor.red
                             }
                             
@@ -378,25 +306,25 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             } else if collectionView == self.nextCollectionView {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calenderIdentifier, for: indexPath) as! CalendarCell
                 if weekMode {
-                    let weekday = self.weekday(date: nextWeekDate)
-                    let flag = self.day(date: nextWeekDate) - weekday
+                    let weekday = calendarManager.weekday(date: nextWeekDate)
+                    let flag = calendarManager.day(date: nextWeekDate) - weekday
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white
                     if i == weekday {
-                        print("currentWeek = \(weekOfMonth(date: Date())) nextweek = \(weekOfMonth(date: nextWeekDate))")
-                        if weekOfMonth(date: nextWeekDate) == weekOfMonth(date: Date()) {
+
+                        if calendarManager.weekOfMonth(date: nextWeekDate) == calendarManager.weekOfMonth(date: Date()) {
                             cell.backgroundColor = UIColor.red
                         }
                     }
                     day = flag + i
                     
-                    if day > 0 && day < self.totaldaysInThisMonth(date: nextDate) {
+                    if day > 0 && day < calendarManager.totaldaysInThisMonth(date: nextDate) {
                         cell.dateString = String(day)
                     }
                 } else {
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: nextDate)
-                    let firstWeekday = self.firstWeekdayInThisMoth(date: nextDate)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: nextDate)
+                    let firstWeekday = calendarManager.firstWeekdayInThisMoth(date: nextDate)
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white
@@ -413,25 +341,25 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             } else if collectionView == self.lastCollectionView {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calenderIdentifier, for: indexPath) as! CalendarCell
                 if weekMode {
-                    let weekday = self.weekday(date: lastWeekDate)
-                    let flag = self.day(date: lastWeekDate) - weekday
+                    let weekday = calendarManager.weekday(date: lastWeekDate)
+                    let flag = calendarManager.day(date: lastWeekDate) - weekday
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white
                     if i == weekday {
-                        if weekOfMonth(date: lastWeekDate) == weekOfMonth(date: Date()) {
+                        if calendarManager.weekOfMonth(date: lastWeekDate) == calendarManager.weekOfMonth(date: Date()) {
                             cell.backgroundColor = UIColor.red
                         }
                     }
                     day = flag + i
 
-                    if day > 0 && day < self.totaldaysInThisMonth(date: lastDate) {
+                    if day > 0 && day < calendarManager.totaldaysInThisMonth(date: lastDate) {
                         cell.dateString = String(day)
                     }
                 } else {
                     
-                    let daysInThisMonth = self.totaldaysInThisMonth(date: lastDate)
-                    let firstWeekday = self.firstWeekdayInThisMoth(date: lastDate)
+                    let daysInThisMonth = calendarManager.totaldaysInThisMonth(date: lastDate)
+                    let firstWeekday = calendarManager.firstWeekdayInThisMoth(date: lastDate)
                     var day: Int = 0
                     let i = indexPath.item
                     cell.backgroundColor = UIColor.white

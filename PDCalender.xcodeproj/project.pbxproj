@@ -12,7 +12,10 @@
 		FE809BCD1F26E92200AD4145 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE809BCC1F26E92200AD4145 /* CalendarCell.swift */; };
 		FE809BCF1F26EA7600AD4145 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE809BCE1F26EA7600AD4145 /* DateCell.swift */; };
 		FE8153001F32D00300296049 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8152FF1F32D00300296049 /* TestViewController.swift */; };
+		FE8340CA1F3D4E7300D29549 /* PDDatePickerPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8340C91F3D4E7300D29549 /* PDDatePickerPopView.swift */; };
 		FE9903721F2F15320053C24C /* CalenderAnimationCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */; };
+		FEBCCBDA1F4151120045D0DD /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCCBD91F4151120045D0DD /* CalendarManager.swift */; };
+		FEBCCBDC1F4184580045D0DD /* DatePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCCBDB1F4184580045D0DD /* DatePickerModel.swift */; };
 		FECD8F191F25C57C00D54632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F181F25C57C00D54632 /* AppDelegate.swift */; };
 		FECD8F1B1F25C57C00D54632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD8F1A1F25C57C00D54632 /* ViewController.swift */; };
 		FECD8F1E1F25C57C00D54632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECD8F1C1F25C57C00D54632 /* Main.storyboard */; };
@@ -40,15 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE809BC81F26E30E00AD4145 /* CalenderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderCell.xib; sourceTree = "<group>"; };
-		FE809BCA1F26E35F00AD4145 /* DateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
-		FE809BCC1F26E92200AD4145 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
-		FE809BCE1F26EA7600AD4145 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		FE8152FF1F32D00300296049 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderAnimationCotroller.swift; sourceTree = "<group>"; };
+		FE809BC81F26E30E00AD4145 /* CalenderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalenderCell.xib; path = ../CalenderCell.xib; sourceTree = "<group>"; };
+		FE809BCA1F26E35F00AD4145 /* DateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateCell.xib; path = ../DateCell.xib; sourceTree = "<group>"; };
+		FE809BCC1F26E92200AD4145 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarCell.swift; path = ../CalendarCell.swift; sourceTree = "<group>"; };
+		FE809BCE1F26EA7600AD4145 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCell.swift; path = ../DateCell.swift; sourceTree = "<group>"; };
+		FE8152FF1F32D00300296049 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
+		FE8340C91F3D4E7300D29549 /* PDDatePickerPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDDatePickerPopView.swift; path = ../PDDatePickerPopView.swift; sourceTree = "<group>"; };
+		FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalenderAnimationCotroller.swift; path = ../CalenderAnimationCotroller.swift; sourceTree = "<group>"; };
+		FEBCCBD91F4151120045D0DD /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		FEBCCBDB1F4184580045D0DD /* DatePickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerModel.swift; sourceTree = "<group>"; };
 		FECD8F151F25C57C00D54632 /* PDCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECD8F181F25C57C00D54632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FECD8F1A1F25C57C00D54632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FECD8F1A1F25C57C00D54632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		FECD8F1D1F25C57C00D54632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FECD8F1F1F25C57D00D54632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FECD8F221F25C57D00D54632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,6 +92,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FEBCCBD51F4150830045D0DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
+				FE8152FF1F32D00300296049 /* TestViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEBCCBD61F4150830045D0DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */,
+				FEBCCBD91F4151120045D0DD /* CalendarManager.swift */,
+				FEBCCBDB1F4184580045D0DD /* DatePickerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEBCCBD71F4150830045D0DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE809BCC1F26E92200AD4145 /* CalendarCell.swift */,
+				FE809BC81F26E30E00AD4145 /* CalenderCell.xib */,
+				FE809BCE1F26EA7600AD4145 /* DateCell.swift */,
+				FE809BCA1F26E35F00AD4145 /* DateCell.xib */,
+				FE8340C91F3D4E7300D29549 /* PDDatePickerPopView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEBCCBD81F4150C30045D0DD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FECD8F1C1F25C57C00D54632 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		FECD8F0C1F25C57C00D54632 = {
 			isa = PBXGroup;
 			children = (
@@ -109,15 +154,11 @@
 		FECD8F171F25C57C00D54632 /* PDCalender */ = {
 			isa = PBXGroup;
 			children = (
+				FEBCCBD51F4150830045D0DD /* Controller */,
+				FEBCCBD61F4150830045D0DD /* Model */,
+				FEBCCBD71F4150830045D0DD /* View */,
+				FEBCCBD81F4150C30045D0DD /* Storyboard */,
 				FECD8F181F25C57C00D54632 /* AppDelegate.swift */,
-				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
-				FE8152FF1F32D00300296049 /* TestViewController.swift */,
-				FE9903711F2F15320053C24C /* CalenderAnimationCotroller.swift */,
-				FE809BCC1F26E92200AD4145 /* CalendarCell.swift */,
-				FE809BCE1F26EA7600AD4145 /* DateCell.swift */,
-				FE809BC81F26E30E00AD4145 /* CalenderCell.xib */,
-				FE809BCA1F26E35F00AD4145 /* DateCell.xib */,
-				FECD8F1C1F25C57C00D54632 /* Main.storyboard */,
 				FECD8F1F1F25C57D00D54632 /* Assets.xcassets */,
 				FECD8F211F25C57D00D54632 /* LaunchScreen.storyboard */,
 				FECD8F241F25C57D00D54632 /* Info.plist */,
@@ -284,10 +325,13 @@
 			files = (
 				FECD8F1B1F25C57C00D54632 /* ViewController.swift in Sources */,
 				FE809BCD1F26E92200AD4145 /* CalendarCell.swift in Sources */,
+				FEBCCBDC1F4184580045D0DD /* DatePickerModel.swift in Sources */,
 				FE9903721F2F15320053C24C /* CalenderAnimationCotroller.swift in Sources */,
 				FECD8F191F25C57C00D54632 /* AppDelegate.swift in Sources */,
 				FE8153001F32D00300296049 /* TestViewController.swift in Sources */,
+				FEBCCBDA1F4151120045D0DD /* CalendarManager.swift in Sources */,
 				FE809BCF1F26EA7600AD4145 /* DateCell.swift in Sources */,
+				FE8340CA1F3D4E7300D29549 /* PDDatePickerPopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +373,7 @@
 				FECD8F1D1F25C57C00D54632 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FECD8F211F25C57D00D54632 /* LaunchScreen.storyboard */ = {
