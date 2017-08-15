@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 let kDatePickerContentHeight: CGFloat = 310.0
 let kDatePickerHeight: CGFloat = 216.0
 let kDatePickerPadding: CGFloat = 15.0
@@ -21,9 +20,34 @@ class PDDatePickerPopView: UIView {
     var titleLabel: UILabel!
     var confirmButton: UIButton!
     var backgroundView: UIView!
-    var weekMode: Bool = false
+    var weekMode: Bool = true
     var weekDatePicker: UIPickerView?
     var callBack: DatePickerCallback?
+    var monthArray: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    var dayArray: Array<String> = []
+    var date: Date?{
+        didSet {
+            let days = CalandarManager().totaldaysInThisMonth(date: date!)
+            let weeks = CalandarManager().totalweeksInThisMonth(date: date!)
+            print(weeks)
+            let firstWeekDay = CalandarManager().firstWeekdayInThisMoth(date: date!)
+            let changeDay = 7 - firstWeekDay + 1
+            dayArray.removeAll()
+            for index in 0..<weeks {
+                
+                if index == 0 {
+                    dayArray.append("\(String(1))—\(String(changeDay))")
+                } else if index == weeks - 1 {
+                    dayArray.append("\(String(changeDay+7*(index-1)+1))—\(days)")
+                } else {
+                    dayArray.append("\(String(changeDay+7*(index-1)+1))—\(String(changeDay+7*index))")
+                }
+                
+            }
+            weekDatePicker?.reloadComponent(1)
+            print(dayArray)
+        }
+    }
     
     init() {
         super.init(frame:CGRect.zero)
@@ -78,12 +102,19 @@ class PDDatePickerPopView: UIView {
         contentView.addSubview(confirmButton)
         
         if weekMode {
+            date = Date()
+            let month = CalandarManager().month(date: date!)
+            let day = CalandarManager().weekOfMonth(date: date!)
+            datePicker.isHidden = true
             weekDatePicker = UIPickerView.init()
             weekDatePicker?.frame.size = CGSize(width: contentView.frame.width - kDatePickerPadding*2, height: kDatePickerHeight)
             weekDatePicker?.center = CGPoint(x: contentView.frame.width / 2.0, y: contentView.frame.height / 2.0)
             weekDatePicker?.delegate = self
+            weekDatePicker?.selectRow(month-1, inComponent: 0, animated: false)
+            weekDatePicker?.selectRow(day-1, inComponent: 1, animated: false)
             contentView.addSubview(weekDatePicker!)
         }
+       
     }
     
     class func showDatePicker(_ date: Date, datePickerCallBack: @escaping DatePickerCallback) -> PDDatePickerPopView {
@@ -109,10 +140,36 @@ class PDDatePickerPopView: UIView {
 
 extension PDDatePickerPopView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        switch component {
+        case 0:
+            return monthArray.count
+        case 1:
+            return dayArray.count
+        default:
+            return 0
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            print(component)
+            return ("\(String(monthArray[row]))月")
+        case 1:
+            return dayArray[row]
+        default:
+            return ""
+        }
+    }
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(11111)
+        guard component == 0 else {
+            return
+        }
+        let flag = row - CalandarManager().month(date: date!) + 1
+        self.date = CalandarManager().changeMonth(date: date!, with: flag)
     }
 }

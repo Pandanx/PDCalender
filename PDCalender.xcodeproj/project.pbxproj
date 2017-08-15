@@ -92,15 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FEBCCBD51F4150830045D0DD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
-				FE8152FF1F32D00300296049 /* TestViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		FEBCCBD61F4150830045D0DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +145,7 @@
 		FECD8F171F25C57C00D54632 /* PDCalender */ = {
 			isa = PBXGroup;
 			children = (
-				FEBCCBD51F4150830045D0DD /* Controller */,
+				FED7C2B01F428D6900BD1337 /* Controller */,
 				FEBCCBD61F4150830045D0DD /* Model */,
 				FEBCCBD71F4150830045D0DD /* View */,
 				FEBCCBD81F4150C30045D0DD /* Storyboard */,
@@ -182,6 +173,15 @@
 				FECD8F3A1F25C57D00D54632 /* Info.plist */,
 			);
 			path = PDCalenderUITests;
+			sourceTree = "<group>";
+		};
+		FED7C2B01F428D6900BD1337 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE8152FF1F32D00300296049 /* TestViewController.swift */,
+				FECD8F1A1F25C57C00D54632 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
