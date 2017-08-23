@@ -114,6 +114,8 @@ class PDDatePickerPopView: UIView {
             weekDatePicker?.selectRow(day-1, inComponent: 1, animated: false)
             contentView.addSubview(weekDatePicker!)
         }
+        
+        NetWorkManager().request()
        
     }
     
@@ -165,7 +167,6 @@ extension PDDatePickerPopView: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(11111)
         guard component == 0 else {
             return
         }

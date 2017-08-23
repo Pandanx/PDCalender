@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 public struct CalandarManager {
     public func day(date: Date) -> Int {
         let components = Calendar.current.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day], from: date)

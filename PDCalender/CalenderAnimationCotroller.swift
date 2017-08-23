@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CalenderAnimationCotroller: NSObject, UIViewControllerAnimatedTransitioning {
     var reverse: Bool?
@@ -15,6 +16,7 @@ class CalenderAnimationCotroller: NSObject, UIViewControllerAnimatedTransitionin
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5;
     }
+    
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let fromVC: UIViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
